@@ -119,97 +119,97 @@ dependencies {
         exclude group: 'com.google.code.findbugs', module: 'jsr305'
     })}
 
-tasks.withType(Test) {
-    scanForTestClasses = false
-    include "**/*Test.class"
-    exclude "**/*AndroidCalculatorEditorViewTest*"
-    exclude "**/*CalculatorWizardActivityTest*"
-    exclude "**/*OnScreenCalculatorWizardStepTest*"
-    exclude "**/*CalculatorWizardTest*"
-    exclude "**/*WizardStepTest*"
-    exclude "**/*AngleUnitsButtonTest*"
-    exclude "**/*NumeralBasesButtonTest*"
-}
-
-task androidJavadocs(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.bootClasspath.join(File.pathSeparator))
-    configurations.compile.each { File file -> classpath += project.files(file.path) }
-}
-
-task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
-    classifier = 'javadoc'
-    from androidJavadocs.destinationDir
-}
-
-task androidSourcesJar(type: Jar) {
-    classifier = 'sources'
-    from android.sourceSets.main.java.srcDirs
-}
-
-artifacts {
-    archives androidSourcesJar
-    archives file: file('build/outputs/apk/release/app-release.apk'), name: 'calculatorpp-app', classifier: 'signed', type: 'apk'
-    archives file: file('build/outputs/mapping/release/mapping.txt'), name: 'calculatorpp-app', classifier: 'proguard', type: 'txt'
-}
-
-signing {
-    sign configurations.archives
-}
-
-group = "org.solovyev.android"
-version = android.defaultConfig.versionName
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment { MavenDeployment deployment ->
-                signing.signPom(deployment)
-                // for some reason Gradle :uploadArchives tries to upload null.txt.asc and null.map artifacts.
-                // As we don't want those let's filter them now (note that these files are not included in the
-                // list of project artifacts, so their origin is not clear)
-                def removeCond = { artifact -> return !artifact.classifier && (artifact.type == "map" || artifact.type == "txt.asc") }
-                deployment.artifacts.removeAll(removeCond)
-                deployment.attachedArtifacts.removeAll(removeCond)
-            }
-
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                artifactId = 'calculatorpp-app'
-                name 'Calculator++ Application'
-                packaging 'apk'
-                description 'Calculator for Android'
-                url 'https://github.com/serso/android-calculatorpp'
-
-                scm {
-                    url 'https://github.com/serso/android-calculatorpp'
-                    connection 'scm:https://serso@github.com/serso/android-calculatorpp.git'
-                    developerConnection 'scm:git://github.com/serso/android-calculatorpp.git'
-                }
-
-                licenses {
-                    license {
-                        name 'The Apache Software License, Version 2.0'
-                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-                        distribution 'repo'
-                    }
-                }
-
-                developers {
-                    developer {
-                        id 'se.solovyev'
-                        name 'Sergey Solovyev'
-                        email 'se.solovyev@gmail.com'
-                    }
-                }
-            }
-        }
-    }
-}
+//tasks.withType(Test) {
+//    scanForTestClasses = false
+//    include "**/*Test.class"
+//    exclude "**/*AndroidCalculatorEditorViewTest*"
+//    exclude "**/*CalculatorWizardActivityTest*"
+//    exclude "**/*OnScreenCalculatorWizardStepTest*"
+//    exclude "**/*CalculatorWizardTest*"
+//    exclude "**/*WizardStepTest*"
+//    exclude "**/*AngleUnitsButtonTest*"
+//    exclude "**/*NumeralBasesButtonTest*"
+//}
+//
+//task androidJavadocs(type: Javadoc) {
+//    source = android.sourceSets.main.java.srcDirs
+//    classpath += project.files(android.bootClasspath.join(File.pathSeparator))
+//    configurations.compile.each { File file -> classpath += project.files(file.path) }
+//}
+//
+//task androidJavadocsJar(type: Jar, dependsOn: androidJavadocs) {
+//    classifier = 'javadoc'
+//    from androidJavadocs.destinationDir
+//}
+//
+//task androidSourcesJar(type: Jar) {
+//    classifier = 'sources'
+//    from android.sourceSets.main.java.srcDirs
+//}
+//
+//artifacts {
+//    archives androidSourcesJar
+//    archives file: file('build/outputs/apk/release/app-release.apk'), name: 'calculatorpp-app', classifier: 'signed', type: 'apk'
+//    archives file: file('build/outputs/mapping/release/mapping.txt'), name: 'calculatorpp-app', classifier: 'proguard', type: 'txt'
+//}
+//
+//signing {
+//    sign configurations.archives
+//}
+//
+//group = "org.solovyev.android"
+//version = android.defaultConfig.versionName
+//
+//uploadArchives {
+//    repositories {
+//        mavenDeployer {
+//            beforeDeployment { MavenDeployment deployment ->
+//                signing.signPom(deployment)
+//                // for some reason Gradle :uploadArchives tries to upload null.txt.asc and null.map artifacts.
+//                // As we don't want those let's filter them now (note that these files are not included in the
+//                // list of project artifacts, so their origin is not clear)
+//                def removeCond = { artifact -> return !artifact.classifier && (artifact.type == "map" || artifact.type == "txt.asc") }
+//                deployment.artifacts.removeAll(removeCond)
+//                deployment.attachedArtifacts.removeAll(removeCond)
+//            }
+//
+//            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+//                authentication(userName: ossrhUsername, password: ossrhPassword)
+//            }
+//
+//            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+//                authentication(userName: ossrhUsername, password: ossrhPassword)
+//            }
+//
+//            pom.project {
+//                artifactId = 'calculatorpp-app'
+//                name 'Calculator++ Application'
+//                packaging 'apk'
+//                description 'Calculator for Android'
+//                url 'https://github.com/serso/android-calculatorpp'
+//
+//                scm {
+//                    url 'https://github.com/serso/android-calculatorpp'
+//                    connection 'scm:https://serso@github.com/serso/android-calculatorpp.git'
+//                    developerConnection 'scm:git://github.com/serso/android-calculatorpp.git'
+//                }
+//
+//                licenses {
+//                    license {
+//                        name 'The Apache Software License, Version 2.0'
+//                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+//                        distribution 'repo'
+//                    }
+//                }
+//
+//                developers {
+//                    developer {
+//                        id 'se.solovyev'
+//                        name 'Sergey Solovyev'
+//                        email 'se.solovyev@gmail.com'
+//                    }
+//                }
+//            }
+//        }
+//    }
+//}
