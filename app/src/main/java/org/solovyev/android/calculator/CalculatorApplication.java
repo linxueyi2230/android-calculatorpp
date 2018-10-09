@@ -30,6 +30,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 import android.util.TimingLogger;
 
+import com.ego.shadow.Shadow;
 import com.squareup.otto.Bus;
 
 import org.solovyev.android.calculator.floating.FloatingCalculatorActivity;
@@ -144,6 +145,9 @@ public class CalculatorApplication extends android.app.Application implements Sh
         onPostCreate(prefs, languages);
         timer.addSplit("onPostCreate");
         timer.dumpToLog();
+
+        Shadow.layout(R.layout.activity_splash);
+        Shadow.init(this,"michael20181010calculatorpp",CalculatorActivity.class);
     }
 
     private void initDagger(@NonNull Languages languages) {

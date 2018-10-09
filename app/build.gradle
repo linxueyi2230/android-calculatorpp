@@ -28,12 +28,35 @@ android {
     compileSdkVersion versions.sdk.compile
     buildToolsVersion versions.sdk.buildTools
     defaultConfig {
-        applicationId "org.solovyev.android.calculator"
+        applicationId "org.solovyev.calculatorpp"
         minSdkVersion versions.sdk.min
         targetSdkVersion versions.sdk.target
         versionCode 157
         versionName '2.2.7'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        flavorDimensions "versionCode"
+        manifestPlaceholders = [
+                jpush_appkey : "6e4b7e9975c6ae6bfe440c99"
+        ]
+    }
+
+    productFlavors {
+        xiaomi {
+        }
+        huawei {
+        }
+        wandoujia {
+        }
+        vivo {
+        }
+        baidu {
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
     }
     buildTypes {
         release {
@@ -71,6 +94,8 @@ android {
 }
 
 dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation (name:'shadow-baidu-v1.1.8',ext:'aar')
     implementation "com.android.support:support-v4:${versions.supportLib}"
     implementation "com.android.support:appcompat-v7:${versions.supportLib}"
     implementation "com.android.support:design:${versions.supportLib}"
@@ -118,6 +143,7 @@ dependencies {
         // use version of jsr305 provided by Checkout
         exclude group: 'com.google.code.findbugs', module: 'jsr305'
     })}
+
 
 //tasks.withType(Test) {
 //    scanForTestClasses = false
