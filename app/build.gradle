@@ -36,9 +36,9 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         flavorDimensions "versionCode"
-        manifestPlaceholders = [
-                jpush_appkey : "6e4b7e9975c6ae6bfe440c99"
-        ]
+//        manifestPlaceholders = [
+//                jpush_appkey : "6e4b7e9975c6ae6bfe440c99"
+//        ]
     }
 
     productFlavors {
@@ -54,11 +54,11 @@ android {
         }
     }
 
-    repositories {
-        flatDir {
-            dirs 'libs'
-        }
-    }
+//    repositories {
+//        flatDir {
+//            dirs 'libs'
+//        }
+//    }
     buildTypes {
         release {
             minifyEnabled false
@@ -96,7 +96,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation (name:'shadow-baidu-v1.1.8',ext:'aar')
+//    implementation (name:'shadow-baidu-v1.1.8',ext:'aar')
     implementation 'com.android.support:multidex:1.0.3'
     implementation "com.android.support:support-v4:${versions.supportLib}"
     implementation "com.android.support:appcompat-v7:${versions.supportLib}"
