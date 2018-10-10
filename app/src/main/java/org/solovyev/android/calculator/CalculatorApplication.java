@@ -27,6 +27,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 import android.util.TimingLogger;
 
@@ -49,7 +50,7 @@ import javax.inject.Named;
 import dagger.Lazy;
 import jscl.MathEngine;
 
-public class CalculatorApplication extends android.app.Application implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class CalculatorApplication extends MultiDexApplication implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     // delayed GA reporting in order to avoid initialization of GA on the main
     // application thread and to postpone it as much as possible
