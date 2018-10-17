@@ -4,7 +4,7 @@
     <!--<string name="cpp_app_name_on_screen">Calculator++（悬浮）</string>-->
     <!--<string name="cpp_app_name">计算器</string>-->
     <string name="cpp_app_name">UCalculator</string>
-    <string name="cpp_app_name_on_screen">计算器（悬浮）</string>
+    <string name="cpp_app_name_on_screen">UCalculator（悬浮）</string>
     <string name="cpp_vars_and_constants">变量与常数</string>
     <string name="c_plot">作图</string>
     <string name="cpp_precision">保留小数点后位数</string>
@@ -42,7 +42,7 @@
     <string name="c_history_expression">值</string>
     <string name="c_history_comment">备注</string>
     <string name="cpp_history_tab_saved">已保存历史记录</string>
-    <string name="c_first_start_text">感谢您选择Calculator++！\n\nCalculator++ 是一款超强的日常计算工具。</string>
+    <string name="c_first_start_text">感谢您选择UCalculator！\n\nUCalculator 是一款超强的日常计算工具。</string>
     <string name="c_calc_show_release_notes_title">显示更新日志</string>
     <string name="c_calc_use_back_button_as_prev_title">按返回键查看上一条记录</string>
     <string name="c_error">错误</string>
