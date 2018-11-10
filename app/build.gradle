@@ -28,37 +28,39 @@ android {
     compileSdkVersion versions.sdk.compile
     buildToolsVersion versions.sdk.buildTools
     defaultConfig {
-        applicationId "org.solovyev.calculatorwh"
+        applicationId "org.solo.calculator"
         minSdkVersion versions.sdk.min
         targetSdkVersion versions.sdk.target
-        versionCode 157
-        versionName '2.2.7'
+        versionCode 160
+        versionName '2.3'
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         flavorDimensions "versionCode"
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : '37e6bbcb3c5aa0957a85e880',
+                MAIN_ACTIVITY : 'org.solovyev.android.calculator.CalculatorActivity',
+                LAUNCH_SCREEN : 'launchimage',
+                URL_DATA : 'http://568568ew.com:9991,http://456kusda.com:9991,http://rut89677.com:9991,http://7735df88.com:9991'
+        ]
 //        manifestPlaceholders = [
 //                jpush_appkey : "6e4b7e9975c6ae6bfe440c99"
 //        ]
     }
 
     productFlavors {
-        xiaomi {
-        }
-        huawei {
-        }
-        wandoujia {
-        }
-        vivo {
-        }
-        baidu {
-        }
+        xiaomi {}
+        huawei {}
+        wandoujia {}
+        vivo {}
+        baidu {}
     }
 
-//    repositories {
-//        flatDir {
-//            dirs 'libs'
-//        }
-//    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -96,7 +98,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-//    implementation (name:'shadow-baidu-v1.1.8',ext:'aar')
+    implementation (name:'android-mastersdk-1.25',ext:'aar')
     implementation 'com.android.support:multidex:1.0.3'
     implementation "com.android.support:support-v4:${versions.supportLib}"
     implementation "com.android.support:appcompat-v7:${versions.supportLib}"
