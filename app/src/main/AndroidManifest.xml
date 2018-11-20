@@ -22,7 +22,7 @@
         android:name=".CalculatorApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher_zbtsp"
+        android:icon="@mipmap/ic_launcher_gsgl"
         android:label="@string/cpp_app_name"
         android:theme="@style/Cpp.Theme.Material"
         tools:ignore="GoogleAppIndexingWarning,UnusedAttribute">

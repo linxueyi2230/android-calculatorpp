@@ -32,7 +32,7 @@ android {
         minSdkVersion versions.sdk.min
         targetSdkVersion versions.sdk.target
         versionCode 160
-        versionName '2.3'
+        versionName '2.4'
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         flavorDimensions "versionCode"
