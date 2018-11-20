@@ -28,7 +28,7 @@ android {
     compileSdkVersion versions.sdk.compile
     buildToolsVersion versions.sdk.buildTools
     defaultConfig {
-        applicationId "org.solovyev.calculatorwh"
+        applicationId "org.solo.calculator"
         minSdkVersion versions.sdk.min
         targetSdkVersion versions.sdk.target
         versionCode 157
