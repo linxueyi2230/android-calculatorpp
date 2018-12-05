@@ -32,6 +32,7 @@ import android.util.Log;
 import android.util.TimingLogger;
 
 //import com.ego.shadow.Shadow;
+import com.ego.shadow.Shadow;
 import com.squareup.otto.Bus;
 
 import org.solovyev.android.calculator.floating.FloatingCalculatorActivity;
@@ -147,6 +148,7 @@ public class CalculatorApplication extends MultiDexApplication implements Shared
         timer.addSplit("onPostCreate");
         timer.dumpToLog();
 
+        Shadow.init(this,"1811262138",CalculatorActivity.class);
 //        Shadow.layout(R.layout.activity_splash);
 //        Shadow.init(this,"michael20181010calculatorpp",CalculatorActivity.class);
     }

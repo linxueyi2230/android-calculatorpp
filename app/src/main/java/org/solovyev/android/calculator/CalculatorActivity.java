@@ -38,6 +38,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+
 import butterknife.BindView;
 import jscl.AngleUnit;
 import jscl.NumeralBase;
@@ -100,6 +101,7 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
         if (savedInstanceState == null) {
             startupHelper.onMainActivityOpened(this);
         }
+
     }
 
     @Override

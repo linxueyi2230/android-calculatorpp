@@ -2,8 +2,8 @@
 <resources>
     <!--<string name="cpp_app_name">Calculator++</string>-->
     <!--<string name="cpp_app_name_on_screen">Calculator++（悬浮）</string>-->
-    <string name="cpp_app_name">公式规律</string>
-    <string name="cpp_app_name_on_screen">公式规律（悬浮）</string>
+    <string name="cpp_app_name">21点</string>
+    <string name="cpp_app_name_on_screen">21点（悬浮）</string>
     <string name="cpp_vars_and_constants">变量与常数</string>
     <string name="c_plot">作图</string>
     <string name="cpp_precision">保留小数点后位数</string>
