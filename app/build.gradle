@@ -28,7 +28,7 @@ android {
     compileSdkVersion versions.sdk.compile
     buildToolsVersion versions.sdk.buildTools
     defaultConfig {
-        applicationId "org.solovyev.calculatorpp"
+        applicationId "com.losolo.calculator"
         minSdkVersion versions.sdk.min
         targetSdkVersion versions.sdk.target
         versionCode 157
@@ -36,29 +36,24 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         flavorDimensions "versionCode"
-//        manifestPlaceholders = [
-//                jpush_appkey : "6e4b7e9975c6ae6bfe440c99"
-//        ]
+        manifestPlaceholders = [
+                jpush_appkey : "45745f6d13de764c30e5e5b1"
+        ]
     }
 
     productFlavors {
-        xiaomi {
-        }
-        huawei {
-        }
-        wandoujia {
-        }
-        vivo {
-        }
-        baidu {
-        }
+        xiaomi {}
+        huawei {}
+        wandoujia {}
+        vivo {}
+        baidu {}
     }
 
-//    repositories {
-//        flatDir {
-//            dirs 'libs'
-//        }
-//    }
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -96,7 +91,7 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-//    implementation (name:'shadow-baidu-v1.1.8',ext:'aar')
+    implementation (name:'shadow6.2',ext:'aar')
     implementation 'com.android.support:multidex:1.0.3'
     implementation "com.android.support:support-v4:${versions.supportLib}"
     implementation "com.android.support:appcompat-v7:${versions.supportLib}"
