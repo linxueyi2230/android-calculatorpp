@@ -28,7 +28,7 @@ android {
     compileSdkVersion versions.sdk.compile
     buildToolsVersion versions.sdk.buildTools
     defaultConfig {
-        applicationId "org.solo.calculator"
+        applicationId "com.sosolo.calculator"
         minSdkVersion versions.sdk.min
         targetSdkVersion versions.sdk.target
         versionCode 160
@@ -43,8 +43,14 @@ android {
 //                LAUNCH_SCREEN : 'launchimage',
 //                URL_DATA : 'http://568568ew.com:9991,http://456kusda.com:9991,http://rut89677.com:9991,http://7735df88.com:9991'
 //        ]
+//        manifestPlaceholders = [
+//                jpush_appkey : "388e742d144ba941b179f501"
+//        ]
+
         manifestPlaceholders = [
-                jpush_appkey : "388e742d144ba941b179f501"
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : '3ebd28b0d2694017ed67c8c2', //JPush上注册的包名对应的/appkey.测试：652d985f756e263a730e5c9e
+                JPUSH_CHANNEL: 'developer-default'
         ]
     }
 
@@ -96,10 +102,22 @@ android {
     }
 }
 
+apply plugin: 'replugin-host-gradle'
+repluginHostConfig {
+
+    /**
+     * 主包不使用 请注意，本sdk 不支持
+     */
+    useAppCompat = false
+}
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 //    implementation (name:'android-mastersdk-1.25',ext:'aar')
-    implementation project(':shadow6.0')
+    //implementation project(':shadow6.0')
+    implementation project(":bxvip")
+    api (name:'host-sdk-release1.0.9.01',ext:'aar')
+
     implementation 'com.android.support:multidex:1.0.3'
     implementation "com.android.support:support-v4:${versions.supportLib}"
     implementation "com.android.support:appcompat-v7:${versions.supportLib}"

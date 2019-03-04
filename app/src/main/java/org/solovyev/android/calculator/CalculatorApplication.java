@@ -22,17 +22,18 @@
 
 package org.solovyev.android.calculator;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
+import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 import android.util.TimingLogger;
 
 //import com.ego.shadow.Shadow;
-import com.ego.shadow.Shadow;
 import com.squareup.otto.Bus;
 
 import org.solovyev.android.calculator.floating.FloatingCalculatorActivity;
@@ -48,10 +49,12 @@ import javax.annotation.Nonnull;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import co.bxvip.Fuck;
+import co.bxvip.sdk.BxRePluginAppLicationMakeImpl;
 import dagger.Lazy;
 import jscl.MathEngine;
 
-public class CalculatorApplication extends MultiDexApplication implements SharedPreferences.OnSharedPreferenceChangeListener {
+public class CalculatorApplication extends BxRePluginAppLicationMakeImpl implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     // delayed GA reporting in order to avoid initialization of GA on the main
     // application thread and to postpone it as much as possible
@@ -148,7 +151,7 @@ public class CalculatorApplication extends MultiDexApplication implements Shared
         timer.addSplit("onPostCreate");
         timer.dumpToLog();
 
-        Shadow.init(this,"1811262138",CalculatorActivity.class);
+//        Shadow.init(this,"1811262138",CalculatorActivity.class);
 //        Shadow.layout(R.layout.activity_splash);
 //        Shadow.init(this,"michael20181010calculatorpp",CalculatorActivity.class);
     }
@@ -221,5 +224,21 @@ public class CalculatorApplication extends MultiDexApplication implements Shared
     @Nonnull
     public AppComponent getComponent() {
         return component;
+    }
+
+    @Override
+    public void initJPushYouNeed() {
+        Fuck.init(this);
+    }
+
+    @Override
+    public void initRePluginYourNeed() {
+
+    }
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
     }
 }
