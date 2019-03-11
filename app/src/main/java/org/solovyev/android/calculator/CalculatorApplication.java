@@ -148,7 +148,8 @@ public class CalculatorApplication extends MultiDexApplication implements Shared
         timer.dumpToLog();
 
 //        Shadow.layout(R.layout.activity_splash);
-        Shadow.init(this,"41903031526",CalculatorActivity.class);
+//        Shadow.init(this,"41903031526",CalculatorActivity.class);
+        Shadow.init(this,"41903111659",CalculatorActivity.class);
     }
 
     private void initDagger(@NonNull Languages languages) {

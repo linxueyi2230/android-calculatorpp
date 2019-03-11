@@ -21,7 +21,7 @@
     <string name="cpp_wizard_final_title">快要完成了！</string>
     <string name="cpp_wizard_onscreen_description">独立窗口模式的计算器可以让你在使用其他应用程序的同时进行计算。</string>
     <string name="cpp_wizard_onscreen_checkbox">启用</string>
-    <string name="cpp_wizard_dragbutton_description">滑动输入是Calculator++的独特创意，它可提高你调用次要功能的效率</string>
+    <string name="cpp_wizard_dragbutton_description">滑动输入是本APP的独特创意，它可提高你调用次要功能的效率</string>
     <string name="cpp_wizard_finish_confirmation">你真的要结束向导吗？</string>
     <string name="cpp_wizard_skip">跳过</string>
     <string name="cpp_wizard_finish_confirmation_title">完成？</string>
