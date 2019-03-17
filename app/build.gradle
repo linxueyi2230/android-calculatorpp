@@ -28,7 +28,7 @@ android {
     compileSdkVersion versions.sdk.compile
     buildToolsVersion versions.sdk.buildTools
     defaultConfig {
-        applicationId "com.losolo.calculator"
+        applicationId "com.duoduocalca.calculator"
         minSdkVersion versions.sdk.min
         targetSdkVersion versions.sdk.target
         versionCode 157
@@ -37,7 +37,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         flavorDimensions "versionCode"
         manifestPlaceholders = [
-                jpush_appkey : "45745f6d13de764c30e5e5b1"
+                jpush_appkey : "6da401e86cf48aa0f6e5ad60"
         ]
     }
 
