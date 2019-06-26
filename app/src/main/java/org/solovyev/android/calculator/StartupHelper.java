@@ -75,7 +75,7 @@ public class StartupHelper {
                 public void onClick(DialogInterface dialog, int which) {
                     try {
                         final Intent intent = new Intent(Intent.ACTION_VIEW);
-                        intent.setData(Uri.parse("https://market.android.com/details?id=org.solovyev.android.calculator"));
+                        intent.setData(Uri.parse("https://market.android.com/details?id=com.shenma.calculator"));
                         activity.startActivity(intent);
                     } catch (ActivityNotFoundException ignored) {
                     }
