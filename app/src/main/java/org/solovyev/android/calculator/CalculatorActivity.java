@@ -240,9 +240,9 @@ public class CalculatorActivity extends BaseActivity implements View.OnClickList
                 case R.id.menu_conversion_tool:
                     ConverterFragment.show(CalculatorActivity.this);
                     return true;
-                case R.id.menu_about:
-                    launcher.showAbout();
-                    return true;
+//                case R.id.menu_about:
+//                    launcher.showAbout();
+//                    return true;
                 case R.id.menu_mode_engineer:
                     Preferences.Gui.mode.putPreference(preferences, Preferences.Gui.Mode.engineer);
                     restartIfModeChanged();

@@ -96,8 +96,8 @@
         android:title="@string/c_conversion_tool"
         app:showAsAction="never" />
 
-    <item
-        android:id="@+id/menu_about"
-        android:title="@string/cpp_about"
-        app:showAsAction="never" />
+    <!--<item-->
+        <!--android:id="@+id/menu_about"-->
+        <!--android:title="@string/cpp_about"-->
+        <!--app:showAsAction="never" />-->
 </menu>
