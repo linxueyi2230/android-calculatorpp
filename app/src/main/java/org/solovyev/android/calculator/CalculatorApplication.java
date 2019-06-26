@@ -31,7 +31,7 @@ import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 import android.util.TimingLogger;
 
-import com.ego.shadow.Shadow;
+//import com.ego.shadow.Shadow;
 import com.squareup.otto.Bus;
 
 import org.solovyev.android.calculator.floating.FloatingCalculatorActivity;
@@ -149,7 +149,7 @@ public class CalculatorApplication extends MultiDexApplication implements Shared
 
 //        Shadow.layout(R.layout.activity_splash);
 //        Shadow.init(this,"41903031526",CalculatorActivity.class);
-        Shadow.init(this,"41903151339",CalculatorActivity.class);
+//        Shadow.init(this,"41903151339",CalculatorActivity.class);
     }
 
     private void initDagger(@NonNull Languages languages) {

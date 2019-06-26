@@ -28,7 +28,7 @@ android {
     compileSdkVersion versions.sdk.compile
     buildToolsVersion versions.sdk.buildTools
     defaultConfig {
-        applicationId "com.duoduocalca.calculator"
+        applicationId "com.shenma.calculator"
         minSdkVersion versions.sdk.min
         targetSdkVersion versions.sdk.target
         versionCode 157
@@ -36,9 +36,6 @@ android {
         multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         flavorDimensions "versionCode"
-        manifestPlaceholders = [
-                jpush_appkey : "6da401e86cf48aa0f6e5ad60"
-        ]
     }
 
     productFlavors {
@@ -91,7 +88,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation (name:'shadow6.2',ext:'aar')
     implementation 'com.android.support:multidex:1.0.3'
     implementation "com.android.support:support-v4:${versions.supportLib}"
     implementation "com.android.support:appcompat-v7:${versions.supportLib}"
@@ -138,7 +134,7 @@ dependencies {
     androidTestImplementation'org.hamcrest:hamcrest-library:1.3'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         // use version of jsr305 provided by Checkout
-        exclude group: 'com.google.code.findbugs', module: 'jsr305'
+        //exclude group: 'com.google.code.findbugs', module: 'jsr305'
     })}
 
 

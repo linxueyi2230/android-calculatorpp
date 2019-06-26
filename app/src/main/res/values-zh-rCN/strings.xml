@@ -3,8 +3,8 @@
     <!--<string name="cpp_app_name">Calculator++</string>-->
     <!--<string name="cpp_app_name_on_screen">Calculator++（悬浮）</string>-->
     <!--<string name="cpp_app_name">计算器</string>-->
-    <string name="cpp_app_name">多多计算器</string>
-    <string name="cpp_app_name_on_screen">多多计算器（悬浮）</string>
+    <string name="cpp_app_name">神马计算器</string>
+    <string name="cpp_app_name_on_screen">神马计算器（悬浮）</string>
     <string name="cpp_vars_and_constants">变量与常数</string>
     <string name="c_plot">作图</string>
     <string name="cpp_precision">保留小数点后位数</string>
